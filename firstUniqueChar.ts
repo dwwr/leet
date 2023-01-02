@@ -1,7 +1,7 @@
 function firstUniqChar(s: string): number {
-  const chars = s.split('').reduce((acc, c) => {
-    return [...acc, { [c]: acc[c] ? acc[c] + 1 : 1 }]
-  }, [])
+  const chars = s.split('').reduce((acc: Record<string, number>, c) => {
+    return { ...acc, [c]: acc[c] ? acc[c] + 1 : 1 }
+  }, {})
   const firstUnique = Object.entries(chars).find(
     (c: [string, number]) => c[1] === 1
   )
