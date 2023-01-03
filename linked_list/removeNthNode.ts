@@ -11,7 +11,6 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
   let [fast, slow] = [head, head]
   let i = 0
   while (i < n) {
-    console.log(fast)
     fast = fast!.next
     i++
   }
